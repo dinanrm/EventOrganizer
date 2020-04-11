@@ -52,6 +52,8 @@ namespace EventOrganizer.Controllers
         {
             ViewData["OrganizerId"] = new SelectList(_context.Organizer, "Id", "Id");
             ViewData["RoleId"] = new SelectList(_context.Role, "Id", "Id");
+            ViewData["OrganizerName"] = new SelectList(_context.Organizer.Select(x => x.Name).ToList());
+            ViewData["RoleName"] = new SelectList(_context.Role.Select(x => x.Name).ToList());
             return View();
         }
 

@@ -49,13 +49,14 @@ namespace EventOrganizer.Controllers
         public IActionResult Create()
         {
             ViewData["OrganizerId"] = new SelectList(_context.Organizer, "Id", "Id");
+            ViewData["OrganizerName"] = new SelectList(_context.Organizer.Select(x => x.Name).ToList());
             return View();
         }
 
         // POST: Events/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,OrganizerId,Name,Type,HeldDate,StartTime,EndTime,IsActive,CreatedAt,UpdatedAt")] Event @event)
+        public async Task<IActionResult> Create([Bind("Id,OrganizerId,Name,Type,HeldDate,StartTime,EndTime,IsActive,CreatedAt,UpdatedAt,OrganizerName")] Event @event)
         {
             if (ModelState.IsValid)
             {
