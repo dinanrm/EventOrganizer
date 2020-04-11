@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EventOrganizer.Data;
 using EventOrganizer.Models;
+using EventOrganizer.Utilities;
 
 namespace EventOrganizer.Controllers
 {
@@ -55,8 +56,6 @@ namespace EventOrganizer.Controllers
         }
 
         // POST: Users/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,RoleId,OrganizerId,Name,Username,Email,Password,Avatar,Gender,PhoneNumber,Address,JoinDate,LastLogin,IsActive,CreatedAt,UpdatedAt")] User user)
@@ -64,6 +63,7 @@ namespace EventOrganizer.Controllers
             if (ModelState.IsValid)
             {
                 user.Id = Guid.NewGuid();
+                user.Password = AuthHelper.EncryptPassword(user.Password);
                 _context.Add(user);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -92,8 +92,6 @@ namespace EventOrganizer.Controllers
         }
 
         // POST: Users/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,RoleId,OrganizerId,Name,Username,Email,Password,Avatar,Gender,PhoneNumber,Address,JoinDate,LastLogin,IsActive,CreatedAt,UpdatedAt")] User user)
