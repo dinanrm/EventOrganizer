@@ -1,5 +1,5 @@
 # EventOrganizer
-Backend application that created to manage event activities virtually. Created using ASP .NET Core Web MVC, the database uses SQL Server and the application is currently hosted on Azure Cloud.
+A simple backend application that created to manage event activities virtually. Created using ASP .NET Core Web MVC, the database uses SQL Server and the application is currently hosted on Azure Cloud.
 
 This website is hosted on Azure cloud : "not yet"
 
