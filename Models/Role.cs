@@ -10,6 +10,7 @@ namespace EventOrganizer.Models
             User = new HashSet<User>();
 
             Id = Guid.NewGuid();
+            IsActive = true;
             CreatedAt = DateTime.Now;
             UpdatedAt = DateTime.Now;
         }

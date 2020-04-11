@@ -7,6 +7,7 @@ namespace EventOrganizer.Models
         public User()
         {
             Id = Guid.NewGuid();
+            IsActive = true;
             CreatedAt = DateTime.Now;
             UpdatedAt = DateTime.Now;
         }
