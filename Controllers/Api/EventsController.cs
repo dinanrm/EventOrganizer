@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace EventOrganizer.Controllers.Api
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class EventsController : ControllerBase

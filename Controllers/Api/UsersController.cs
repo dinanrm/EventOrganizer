@@ -11,7 +11,7 @@ using EventOrganizer.Utilities;
 
 namespace EventOrganizer.Controllers.Api
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
