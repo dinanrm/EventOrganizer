@@ -105,7 +105,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Documentation
-![alt text](https://raw.githubusercontent.com/dinanrm/LectureSystem/develop/ALE%20-%20Lecture%20System%2C%20v22.png)
+![alt text](https://raw.githubusercontent.com/dinanrm/EventOrganizer/develop/Event Organizer%2C v1-2020-04-11.png?token=AGV64RF2E6ZSJVZUPOU2OES6SHX62)
 
 ## Authors
 
