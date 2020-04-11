@@ -30,7 +30,9 @@ namespace EventOrganizer.Data
                 entity.HasIndex(e => e.OrganizerId)
                     .HasName("fkIdx_26");
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Id)
+                .HasColumnName("id")
+                .ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedAt)
                     .HasColumnName("created_at")
@@ -72,7 +74,9 @@ namespace EventOrganizer.Data
             {
                 entity.ToTable("organizer");
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Id)
+                .HasColumnName("id")
+                .ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedAt)
                     .HasColumnName("created_at")
@@ -98,7 +102,9 @@ namespace EventOrganizer.Data
             {
                 entity.ToTable("role");
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Id)
+                .HasColumnName("id")
+                .ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedAt)
                     .HasColumnName("created_at")
@@ -126,7 +132,9 @@ namespace EventOrganizer.Data
                 entity.HasIndex(e => e.RoleId)
                     .HasName("fkIdx_51");
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Id)
+                .HasColumnName("id")
+                .ValueGeneratedNever();
 
                 entity.Property(e => e.Address)
                     .HasColumnName("address")

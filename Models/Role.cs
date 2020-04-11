@@ -8,9 +8,13 @@ namespace EventOrganizer.Models
         public Role()
         {
             User = new HashSet<User>();
+
+            Id = Guid.NewGuid();
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
         }
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public bool? IsActive { get; set; }
         public DateTime CreatedAt { get; set; }

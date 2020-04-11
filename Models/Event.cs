@@ -5,8 +5,15 @@ namespace EventOrganizer.Models
 {
     public partial class Event
     {
-        public int Id { get; set; }
-        public int? OrganizerId { get; set; }
+        public Event()
+        {
+            Id = Guid.NewGuid();
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
+        }
+
+        public Guid Id { get; set; }
+        public Guid? OrganizerId { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
         public DateTime? HeldDate { get; set; }

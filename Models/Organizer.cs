@@ -9,9 +9,13 @@ namespace EventOrganizer.Models
         {
             Event = new HashSet<Event>();
             User = new HashSet<User>();
+
+            Id = Guid.NewGuid();
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
         }
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string ImageLocation { get; set; }
         public bool? IsActive { get; set; }

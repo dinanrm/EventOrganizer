@@ -5,9 +5,16 @@ namespace EventOrganizer.Models
 {
     public partial class User
     {
-        public int Id { get; set; }
-        public int? RoleId { get; set; }
-        public int? OrganizerId { get; set; }
+        public User()
+        {
+            Id = Guid.NewGuid();
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
+        }
+
+        public Guid Id { get; set; }
+        public Guid? RoleId { get; set; }
+        public Guid? OrganizerId { get; set; }
         public string Name { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
